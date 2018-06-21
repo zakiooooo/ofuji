@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+/* body */
+body {
+    background: #fff;
+    width: 100%;
+    text-align: center;
+}
+footer {
+    margin-top: 40px;
+}
+
+/* navbar */
+.navbar {
+    background-color: #fff;
+}
+.navbar-header img {
+    margin-top: 5px;
+    height: 40px;
+}
+
+/* cover */
+.cover {
+    margin-top: -20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 300px;
+    background: url("/images/logo_ofuji.png") center center no-repeat;
+    background-size: 20%;
+}
+.cover .cover-inner {
+    height: 100%;
+    margin: auto;
+    display: table;
+}
+.cover .cover-inner .cover-contents {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+}
+.cover .cover-inner .cover-contents h1 {
+    margin: 0 0 20px 0;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+}
+.cover .btn-success {
+    background-color: #ed486f;
+    border-color: #ed486f;
+}
+
+.item img{
+    width: 100vw;
+}
+
+.worksslider-inside{
+    text-align: center;
+}
+
+.contents{
+    list-style: none;
+    vertical-align: middle;
+}
+
+.icon-group{
+    text-align: center;
+}
+
+.contents img {
+	transition-duration: 0.3s;	/*変化に掛かる時間*/
+}
+.contents img:hover {
+	transform: scale(1.1);	/*画像の拡大率*/
+	transition-duration: 0.3s;	/*変化に掛かる時間*/
+}
+
+
+
+/*.contents-img{*/
+/*    width:100vw;*/
+/*    text-align: center;*/
+/*    vertical-align: middle;*/
+/*}*/
+
+
+
+.caption {
+    width: auto;
+    text-align: center;
+}
+.caption .text {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+.caption .text p {
+    margin: 0;
+    color: white;
+    font-size: 160%;
+}
+.caption:hover .text {
+    /*text-shadow: 2px 4px 3px rgba(0,0,0,0.3);*/
+    text-shadow: 3px 2px 0px #000, 
+               5px 4px 0px rgba(0,0,0,0.15);
+    border: solid 3px white;
+    padding: 0.5em 1em;
+    font-size: large;
+    opacity: 1;
+}
+.caption:hover img {
+    -webkit-filter: sepia(100%);
+}
+
+.topimg img{
+    margin-top: 50px;
+}
+
+.icon-group{
+    margin-top: 50px;
+}
+
+.container {
+    text-align: center;
+}
+
+/*.contents-img .row {*/
+/*    text-align: center;*/
+/*    padding-right: 0;*/
+/*    margin-right: 0;*/
+/*}*/
+
+/*.contents-img .row img{*/
+/*    width: 100%;*/
+/*}*/
