@@ -2,7 +2,7 @@
 
 /* body */
 body {
-    background: #fff;
+    background: white;
     width: 100%;
     text-align: center;
 }
@@ -58,19 +58,12 @@ footer {
     text-align: center;
 }
 
-.contents{
-    list-style: none;
-    vertical-align: middle;
-}
 
-.icon-group{
-    text-align: center;
-}
 
-.contents img {
+#icon-group img {
 	transition-duration: 0.3s;	/*変化に掛かる時間*/
 }
-.contents img:hover {
+#icon-group img:hover {
 	transform: scale(1.1);	/*画像の拡大率*/
 	transition-duration: 0.3s;	/*変化に掛かる時間*/
 }
@@ -86,13 +79,13 @@ footer {
 
 
 .caption {
-    width: auto;
     text-align: center;
+    padding-right: 0;
 }
 .caption .text {
     position: absolute;
     top: 50%;
-    left: 25%;
+    left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
     opacity: 0;
@@ -113,14 +106,10 @@ footer {
     opacity: 1;
 }
 .caption:hover img {
-    -webkit-filter: sepia(100%);
+    -webkit-filter: brightness(50%);
 }
 
 .topimg img{
-    margin-top: 50px;
-}
-
-.icon-group{
     margin-top: 50px;
 }
 
@@ -128,12 +117,75 @@ footer {
     text-align: center;
 }
 
-/*.contents-img .row {*/
-/*    text-align: center;*/
-/*    padding-right: 0;*/
-/*    margin-right: 0;*/
+.text-center{
+    position: relative;
+}
+
+.text-center p{
+    position: absolute;/*絶対配置*/
+    color: white;/*文字は白に*/
+    font-weight: bold; /*太字に*/
+    font-family :Quicksand, sans-serif;/*Google Font*/
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+}
+
+.titletitle{
+    font-size: 2.5em;/*サイズ3倍*/
+}
+
+/*.concon{*/
+/*    padding: 0.1em 1em;*/
+/*    margin: 2em 0;*/
+/*    border: double 5px #fff;*/
 /*}*/
 
-/*.contents-img .row img{*/
-/*    width: 100%;*/
-/*}*/
+.text-center .login{
+    
+    position: fixed;
+    margin-top: auto;
+    top: 57%;
+    color: white;
+    font-size: 2em;
+}
+
+.login .btn{
+    color: white;
+    background-color: transparent;
+}
+@media (max-width:480px) { 
+    .titletitle{
+        font-size: 12px;
+    }
+    
+    .text-center img{
+        width: 1000px;
+        height: auto;
+    }
+}
+
+.text-center img{
+    -webkit-filter: grayscale(100%);
+    width: 100%;
+}
+
+.contents-img{
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+.contents-img img{
+    width: 100%;
+}
+
+#icon-group{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 50px;
+}

@@ -15,3 +15,17 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
 Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
+
+// Login authentication
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login')->name('login.post');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
+
+
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::group(['prefix' => 'users/{id}'], function () {
+        Route::post('upload', 'HomeController@upload')->name('upload');
+        Route::get('home', 'HomeController@index')->name('home'); 
+    });
+});
