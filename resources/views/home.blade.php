@@ -3,19 +3,18 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-xs-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">My Profile</div>
 
-                <div class="panel-body">
+                <div class="panel-body col-xs-4">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
 
-                    You are logged in!
-                    {!! Form::open(['url' => '/upload', 'method' => 'post', 'files' => true]) !!}
+                    {!! Form::open(['route' => ['upload', $user->id], 'method' => 'post', 'files' => true ]) !!}
 
                     {{--成功時のメッセージ--}}
                     @if (session('success'))
@@ -32,7 +31,7 @@
                         </div>
                     @endif
                     
-                    <div class="form-group text-left">
+                    <div class="form-group text-center thumbnail">
                         @if ($user->avatar_filename)
                         <div class="prof">
                             <p>
@@ -40,14 +39,25 @@
                             </p>
                         </div>
                         @endif
-                        {!! Form::label('file', 'Prof画像アップロード', ['class' => 'control-label']) !!}
+                        
+                        {!! Form::label('file', 'プロフィール画像', ['class' => 'control-label']) !!}
+                        @if($user->id == Auth::user()->id)
                         {!! Form::file('file') !!}
-                    </div>
-                    
-                    <div class="form-group">
-                        {!! Form::submit('アップロード', ['class' => 'btn btn-default']) !!}
+                        {!! Form::submit('アップロード', ['class' => 'btn btn-xs btn-primary']) !!}
+                        @endif
                     </div>
                     {!! Form::close() !!}
+                    
+    
+                </div>
+                <div class="user-name col-xs-8">
+                    <h1>{{ $user->name }}</h1>
+                    {{$user->prof}}
+                    @if($user->id == Auth::user()->id)
+                    <div>
+                        <a href="{{ route('prof.edit', ['id' => $user->id]) }}">Edit Profile</a>
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>

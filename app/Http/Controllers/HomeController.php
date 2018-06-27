@@ -22,18 +22,37 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $user = User::find(auth()->id());
+        $user = User::find($id);
 
-        return view('home', compact('user'));
+        return view('home', [
+            'user' => $user,
+        ]);
+    }
+    
+    public function edit($id)
+    {
+        if(\Auth::check()){
+            if(\Auth::user()->id == $id){
+                $user = User::find($id);
+        
+                return view('prof.edit', [
+                    'user' => $user,    
+                ]);
+            }else{
+               return view('prof.error'); 
+            }
+        }else{
+            return view('welcome');
+        }
     }
 
 
     /**
      * ファイルアップロード処理
      */
-    public function upload(Request $request)
+    public function upload(Request $request, $id)
     {
         $this->validate($request, [
             'file' => [
@@ -41,7 +60,7 @@ class HomeController extends Controller
                 'required',
                 // アップロードされたファイルであること
                 'file',
-                // 最小縦横120px 最大縦横400px
+                
                 'dimensions:min_width=120,min_height=120,max_width=1000,max_height=1000',
             ]
         ]);
@@ -49,11 +68,11 @@ class HomeController extends Controller
         if ($request->file('file')->isValid([])) {
             $filename = $request->file->store('public/avatar');
 
-            $user = User::find(auth()->id());
+            $user = User::find($id);
             $user->avatar_filename = basename($filename);
             $user->save();
-
-            return redirect('/home')->with('success', '保存しました。');
+            
+            return redirect()->back()->with('success', '保存しました。');
         } else {
             return redirect()
                 ->back()

@@ -25,7 +25,7 @@
                 <p>Jits-News</p>
               </div>
               <div class="col-xs-6 col-sm-4 col-md-2">
-                <a href="#"><img class="icon" src="images/icon1.png" alt=""></a>
+                <a href="{{ route('cafe.get') }}"><img class="icon" src="images/icon1.png" alt=""></a>
                 <p>Cafe-Minami</p>
               </div>
               <div class="col-xs-6 col-sm-4 col-md-2">
@@ -77,7 +77,7 @@
             @include('commons.footer')
         
         @else
-            <div class="text-center">
+            <div class="welcome text-center">
                 <img class="con" src="images/content3.jpg" alt="">
                 <p class="titletitle">
                     Welcome to the OFUJI-BOARD

@@ -27,5 +27,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'users/{id}'], function () {
         Route::post('upload', 'HomeController@upload')->name('upload');
         Route::get('home', 'HomeController@index')->name('home'); 
+        Route::post('prof', 'ProfController@store')->name('prof.post');
+        Route::get('edit', 'HomeController@edit')->name('prof.edit');
+        Route::post('cafe', 'CafeController@upload')->name('cafe.post');
+        Route::get('cafe-add', 'CafeController@cafe')->name('cafe.add');
     });
+    Route::get('users', 'UsersController@index')->name('users.index');
+    Route::get('cafe', 'CafeController@index')->name('cafe.get');
+    Route::delete('cafe', 'CafeController@destroy')->name('cafe.destroy');
+    
 });

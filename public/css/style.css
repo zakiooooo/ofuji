@@ -117,11 +117,11 @@ footer {
     text-align: center;
 }
 
-.text-center{
+.welcome{
     position: relative;
 }
 
-.text-center p{
+.welcome p{
     position: absolute;/*絶対配置*/
     color: white;/*文字は白に*/
     font-weight: bold; /*太字に*/
@@ -145,7 +145,7 @@ footer {
 /*    border: double 5px #fff;*/
 /*}*/
 
-.text-center .login{
+.welcome .login{
     
     position: fixed;
     margin-top: auto;
@@ -163,13 +163,13 @@ footer {
         font-size: 12px;
     }
     
-    .text-center img{
+    .welcome img{
         width: 1000px;
         height: auto;
     }
 }
 
-.text-center img{
+.welcome img{
     -webkit-filter: grayscale(100%);
     width: 100%;
 }
@@ -188,4 +188,45 @@ footer {
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 50px;
+}
+
+.prof img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    background-position: center center;  /* 横長画像の左上を基準に表示 */
+    display: inline-block;
+    border:5px solid #fff;
+    box-shadow: 0px 0px 10px #ccc, 
+        inset 0px 0px 10px rgba(0, 0, 0, 0.8);
+    
+}
+
+.prof {
+    background-color:white;
+}
+
+.user-name {
+    font-family: Yu Mincho;
+}
+
+.media-left img{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    background-position: center center;  /* 横長画像の左上を基準に表示 */
+    display: inline-block;
+    border:5px solid #fff;
+    box-shadow: 0px 0px 10px #ccc, 
+        inset 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.user-list{
+    height: 80px;
+    vertical-align: middle;
+    margin: auto;
+}
+
+.media-body{
+    vertical-align: middle;
 }
