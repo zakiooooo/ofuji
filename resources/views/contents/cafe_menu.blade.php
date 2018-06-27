@@ -12,7 +12,6 @@
                     {!! Form::open(['route' => ['cafe.destroy', $cafemenu->id], 'method' => 'delete']) !!}
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                     {!! Form::close() !!}
-                    <?php echo $cafemenu->id; ?>
                 @endif
             </div>
         </div>
